@@ -35,3 +35,5 @@
 .clang_complete
 .gcc-flags.json
 firmware.elf
+.vscode/c_cpp_properties.json
+thinx-firmware-esp8266-pio/lib/thinx-lib-esp8266-arduino/*
