@@ -33,7 +33,6 @@ void pushConfigCallback (String config) {
         long timeout = millis() + 20000;
         Serial.println("Attempting WiFi migration...");
         while (WiFi.status() != WL_CONNECTED) {
-          yield();
           if (millis() > timeout) break;
         }
         if (WiFi.status() != WL_CONNECTED) {
@@ -51,8 +50,9 @@ void setup() {
   // Sets location of the device (optional)
   thx.setLocation(49.19522,16.60796);
 
-   // Enter API Key and Owner ID
-  thx = THiNX();
+  
+  // Enter API Key and Owner ID
+  thx = THiNX("0");
   thx.setFinalizeCallback(finalizeCallback);
   thx.setPushConfigCallback(pushConfigCallback);
 }
